@@ -96,8 +96,8 @@ def smaakLiter(liter):
     x = 0
     while x < liter:
         x += 1
-        check = input("Welke smaak wilt u voor liter nummer " + str(x) + "? A) Aardbei, C) Chocolade, M) Munt of V) Vanille? ").lower()
-        if check != "a" and check != "c" and check != "m" and check != "v":
+        check = input("Welke smaak wilt u voor liter nummer " + str(x) + "? A) Aardbei, C) Chocolade of V) Vanille? ").lower()
+        if check != "a" and check != "c" and check != "v":
             x -= 1
             print("Sorry dat is geen optie die wij aanbieden...")
 
@@ -132,8 +132,8 @@ def smaak(bollen):
     x = 0
     while x < bollen:
         x += 1
-        check = input("Welke smaak wilt u voor bolletje nummer " + str(x) + "? A) Aardbei, C) Chocolade, M) Munt of V) Vanille? ").lower()
-        if check != "a" and check != "c" and check != "m" and check != "v":
+        check = input("Welke smaak wilt u voor bolletje nummer " + str(x) + "? A) Aardbei, C) Chocolade of V) Vanille? ").lower()
+        if check != "a" and check != "c" and check != "v":
             x -= 1
             print("Sorry dat is geen optie die wij aanbieden...")
 
