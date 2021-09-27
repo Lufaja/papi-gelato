@@ -183,7 +183,7 @@ def bonZakelijk():
     print("Liters        " + str(liter) + " x €9.80   = €" + str(prijsLiter))
     print('                          -------- +')
     print('Totaal                    = €' + str(prijsLiter))
-    print('BTW (9%)                  = €' + str("{:.2f}".format(float(prijsLiter) * 0.09)))
+    print('BTW (6%)                  = €' + str("{:.2f}".format(float(prijsLiter) * 0.06)))
 
 print("Welkom bij Papi Gelato je mag alle smaken kiezen zolang het maar vanille ijs is.")
 stap0()
