@@ -24,10 +24,10 @@ def ijshouder(soort):
         return soort
 
 def stap4(soort,bollen):
-    toppings = input("Wat voor topping wilt u: A) Geen, B) Slagroom, C) Sprinkels of D) Caramel Saus?").lower()
+    toppings = input("Wat voor topping wilt u: A) Geen, B) Slagroom, C) Sprinkels of D) Caramel Saus? ").lower()
     global aantalToppings
     if toppings == "a":
-        stap4(soort, bollen)
+        stap3(soort, bollen)
     elif toppings == "b":
         global slagroom
         aantalToppings += 1
@@ -46,7 +46,7 @@ def stap4(soort,bollen):
         caramelHorentje += 1
     else:
         print("Sorry dat snap ik niet...")
-        stap4(soort)
+        stap4(soort, bollen)
 
 def stap3(soort, bollen):
     antwoord = input("Hier is uw " + soort + " met " + bollen + " bolletje(s). Wilt u nog meer bestellen? (Y/N) ").lower()
