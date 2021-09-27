@@ -46,7 +46,7 @@ def stap4(soort,bollen):
         aantalToppings += 1
         caramelHorentje += 1
     else:
-        print("Sorry dat snap ik niet...")
+        print("Sorry dat is geen optie die wij aanbieden...")
         stap4(soort, bollen)
 
 def stap3(soort, bollen):
@@ -58,7 +58,7 @@ def stap3(soort, bollen):
         print("Bedankt en tot ziens!")
         exit()
     else:
-        print("Sorry dat snap ik niet...")
+        print("Sorry dat is geen optie die wij aanbieden...")
         stap3(soort, bollen)
 
 def stap2(bollen):
@@ -68,7 +68,7 @@ def stap2(bollen):
         stap4(soort, bollen)
         stap3(soort, bollen)
     else:
-        print("Sorry dat snap ik niet...")
+        print("Sorry dat is geen optie die wij aanbieden...")
         stap2(bollen)
 
 def stap0():
@@ -78,14 +78,14 @@ def stap0():
     elif persoon == "2":
         stapZ()
     else:
-        print("Sorry dat snap ik niet...")
+        print("Sorry dat is geen optie die wij aanbieden...")
         stap0()
 
 def stapZ():
     global liter
     liter = input("Hoeveel liters wilt u? ")
     if liter.isdigit() == False:
-        print("Sorry dat snap ik niet...")
+        print("Sorry dat is geen optie die wij aanbieden...")
         stapZ()
     else:
         liter = int(liter)
@@ -99,12 +99,12 @@ def smaakLiter(liter):
         check = input("Welke smaak wilt u voor liter nummer " + str(x) + "? A) Aardbei, C) Chocolade, M) Munt of V) Vanille? ").lower()
         if check != "a" and check != "c" and check != "m" and check != "v":
             x -= 1
-            print("Sorry dat snap ik niet...")
+            print("Sorry dat is geen optie die wij aanbieden...")
 
 def stap1():
     bollen = input("Hoeveel bolletjes wilt u? ")
     if bollen.isdigit() == False:
-        print("Sorry dat snap ik niet...")
+        print("Sorry dat is geen optie die wij aanbieden...")
         stap1()
     else:
         bollen1 = int(bollen)
@@ -125,7 +125,7 @@ def stap1():
         print("Sorry, zulke grote bakken hebben we niet.")
         stap1()
     else:
-        print("Sorry dat snap ik niet...")
+        print("Sorry dat is geen optie die wij aanbieden...")
         stap1()
 
 def smaak(bollen):
@@ -135,7 +135,7 @@ def smaak(bollen):
         check = input("Welke smaak wilt u voor bolletje nummer " + str(x) + "? A) Aardbei, C) Chocolade, M) Munt of V) Vanille? ").lower()
         if check != "a" and check != "c" and check != "m" and check != "v":
             x -= 1
-            print("Sorry dat snap ik niet...")
+            print("Sorry dat is geen optie die wij aanbieden...")
 
 def bolGeld(bollen):
     bolBetaal = round((float(bollen) * 1.10),2)
