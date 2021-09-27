@@ -138,7 +138,7 @@ def smaak(bollen):
             print("Sorry dat is geen optie die wij aanbieden...")
 
 def bolGeld(bollen):
-    bolBetaal = round((float(bollen) * 1.10),2)
+    bolBetaal = round((float(bollen) * 0.95),2)
     global blGeld 
     blGeld = bolBetaal
     return "€" + str(("{:.2f}".format(bolBetaal)))
@@ -163,7 +163,7 @@ def toppingGeld():
 def bonnetje():
     print('---------["Papi Gelato"]---------')
     print("")
-    print("Bolletjes     " + str(aantalBollen) + " x €1.10   = " + bolGeld(aantalBollen))
+    print("Bolletjes     " + str(aantalBollen) + " x €0.95   = " + bolGeld(aantalBollen))
     if aantalHoorntjes > 0 and aantalBakjes > 0:
         print("Horrentje     " + str(aantalHoorntjes) + " x €1.25   = " + hoornGeld(aantalHoorntjes))
         print("Bakje         " + str(aantalBakjes) + " x €0.75   = " + bakGeld(aantalBakjes))
