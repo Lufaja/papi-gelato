@@ -10,6 +10,7 @@ sprinkels = 0
 caramelBakje = 0
 caramelHorentje = 0
 aantalToppings = 0
+liter = 0
 
 def ijshouder(soort):
     if soort == "a":
@@ -70,6 +71,35 @@ def stap2(bollen):
         print("Sorry dat snap ik niet...")
         stap2(bollen)
 
+def stap0():
+    persoon = input("Bent u 1) particulier of 2) zakelijk? ")
+    if persoon == "1":
+        stap1()
+    elif persoon == "2":
+        stapZ()
+    else:
+        print("Sorry dat snap ik niet...")
+        stap0()
+
+def stapZ():
+    global liter
+    liter = input("Hoeveel liters wilt u? ")
+    if liter.isdigit() == False:
+        print("Sorry dat snap ik niet...")
+        stapZ()
+    else:
+        liter = int(liter)
+        smaakLiter(liter)
+        bonZakelijk()
+        
+def smaakLiter(liter):
+    x = 0
+    while x < liter:
+        x += 1
+        check = input("Welke smaak wilt u voor liter nummer " + str(x) + "? A) Aardbei, C) Chocolade, M) Munt of V) Vanille? ").lower()
+        if check != "a" and check != "c" and check != "m" and check != "v":
+            x -= 1
+            print("Sorry dat snap ik niet...")
 
 def stap1():
     bollen = input("Hoeveel bolletjes wilt u? ")
@@ -131,20 +161,29 @@ def toppingGeld():
     return "€" + str(("{:.2f}".format(tpGeld)))
 
 def bonnetje():
-        print('---------["Papi Gelato"]---------')
-        print("")
-        print("Bolletjes     " + str(aantalBollen) + " x €1.10   = " + bolGeld(aantalBollen))
-        if aantalHoorntjes > 0 and aantalBakjes > 0:
-            print("Horrentje     " + str(aantalHoorntjes) + " x €1.25   = " + hoornGeld(aantalHoorntjes))
-            print("Bakje         " + str(aantalBakjes) + " x €0.75   = " + bakGeld(aantalBakjes))
-        elif aantalBakjes > 0:
-            print("Bakje         " + str(aantalBakjes) + " x €0.75   = " + bakGeld(aantalBakjes))
-        elif aantalHoorntjes > 0:
-            print("Horrentje     " + str(aantalHoorntjes) + " x €1.25   = " + hoornGeld(aantalHoorntjes))
-        if aantalToppings > 0:
-            print("Topping       1 x " + toppingGeld() + "   = " + toppingGeld())
-        print('                          -------- +')
-        print('Totaal                    = €' + str(("{:.2f}".format((hrGeld + bkGeld + blGeld + tpGeld)))))
+    print('---------["Papi Gelato"]---------')
+    print("")
+    print("Bolletjes     " + str(aantalBollen) + " x €1.10   = " + bolGeld(aantalBollen))
+    if aantalHoorntjes > 0 and aantalBakjes > 0:
+        print("Horrentje     " + str(aantalHoorntjes) + " x €1.25   = " + hoornGeld(aantalHoorntjes))
+        print("Bakje         " + str(aantalBakjes) + " x €0.75   = " + bakGeld(aantalBakjes))
+    elif aantalBakjes > 0:
+        print("Bakje         " + str(aantalBakjes) + " x €0.75   = " + bakGeld(aantalBakjes))
+    elif aantalHoorntjes > 0:
+        print("Horrentje     " + str(aantalHoorntjes) + " x €1.25   = " + hoornGeld(aantalHoorntjes))
+    if aantalToppings > 0:
+        print("Topping       1 x " + toppingGeld() + "   = " + toppingGeld())
+    print('                          -------- +')
+    print('Totaal                    = €' + str(("{:.2f}".format((hrGeld + bkGeld + blGeld + tpGeld)))))
+
+def bonZakelijk():
+    prijsLiter = str("{:.2f}".format(liter * 9.80))
+    print('---------["Papi Gelato"]---------')
+    print("")
+    print("Liters        " + str(liter) + " x €9.80   = €" + str(prijsLiter))
+    print('                          -------- +')
+    print('Totaal                    = €' + str(prijsLiter))
+    print('BTW (9%)                  = €' + str("{:.2f}".format(float(prijsLiter) * 0.09)))
 
 print("Welkom bij Papi Gelato je mag alle smaken kiezen zolang het maar vanille ijs is.")
-stap1()
+stap0()
